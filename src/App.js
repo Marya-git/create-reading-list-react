@@ -4,6 +4,7 @@ import BookList from './components/BookList';
 
 function App() {
   const [books, setBooks] = useState([]);
+  const [id, setId] = useState(0);
 
   const editBookById = (id, newTitle) => {
     const updatedBooks = books.map((book) => {
@@ -26,13 +27,9 @@ function App() {
   };
 
   const createBook = (title) => {
-    const updatedBooks = [
-      ...books,
-      {
-        id: Math.round(Math.random() * 9999),
-        title,
-      },
-    ];
+    setId(id+1);
+    //id:id =>id
+    const updatedBooks = [...books,{id,title}];
     setBooks(updatedBooks);
   };
 
