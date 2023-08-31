@@ -74,4 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Runs the JSON server in the development mode.\
 Open [http://localhost:3001/books](http://localhost:3001/books) to view it in your browser.
 
-### I practice this project for udemy course of modern react with redux (Stephen Grider)
+### I practice this project for udemy course of modern react with redux (Stephen Grider) and I developed it

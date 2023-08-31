@@ -26,7 +26,7 @@ function BookShow({book, onDelete, onEdit}){
         setHeartColor(!heartColor);
     }
     // let heartImg = (heartColor === false)? <img className='heart' alt='heart' src={heartWhite} style={{width: 20 + click*10 + 'px'}}/>: <img className='heart' alt='heart' src={heart} style={{width: 20 + click*10 + 'px'}}/>
-    let heartImg = (heartColor === false)? <img className='heart' alt='heart' src={heartWhite} style={{width: 20 +  'px'}}/>: <img className='heart' alt='heart' src={heart} style={{width: 20 + 'px'}}/>
+    let heartImg = (heartColor === false)? <img className='heart' alt='heart' src={heartWhite} style={{width: 15 +  'px'}}/>: <img className='heart' alt='heart' src={heart} style={{width: 15 + 'px'}}/>
 
     return (
 
