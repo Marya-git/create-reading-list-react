@@ -69,4 +69,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+### `npm run server`
+
+Runs the JSON server in the development mode.\
+Open [http://localhost:3001/books](http://localhost:3001/books) to view it in your browser.
+
 ### I practice this project for udemy course of modern react with redux (Stephen Grider)
