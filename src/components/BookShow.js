@@ -1,10 +1,12 @@
 import { useState } from "react";
 import BookEdit from "./BookEdit";
 import heart from '../svg/heart.svg';
+import heartWhite from '../svg/heart-white.svg';
 
 function BookShow({book, onDelete, onEdit}){
     const [showEidt, setShowEdit] =  useState(false);
-    const [click, setClick] = useState(0);
+    // const [click, setClick] = useState(0);
+    const [heartColor, setHeartColor] = useState(false);
     const deleteItem = () => {
         onDelete(book.id);
     }
@@ -20,9 +22,14 @@ function BookShow({book, onDelete, onEdit}){
         content = <BookEdit  book={book} onSubmit={handleEditSubmit}/>;
     }
     function handleClick(){
-        setClick(click + 1);
+        // setClick(click + 1);
+        setHeartColor(!heartColor);
     }
+    // let heartImg = (heartColor === false)? <img className='heart' alt='heart' src={heartWhite} style={{width: 20 + click*10 + 'px'}}/>: <img className='heart' alt='heart' src={heart} style={{width: 20 + click*10 + 'px'}}/>
+    let heartImg = (heartColor === false)? <img className='heart' alt='heart' src={heartWhite} style={{width: 20 +  'px'}}/>: <img className='heart' alt='heart' src={heart} style={{width: 20 + 'px'}}/>
+
     return (
+
         <div className="book-show"> 
             <img alt="books" src={`https://picsum.photos/seed/${book.id}/300/200`} /> 
             <div>{content}</div>
@@ -31,7 +38,7 @@ function BookShow({book, onDelete, onEdit}){
                 <button className="delete" onClick={deleteItem} >x</button>
            </div>
            <div onClick={handleClick}>
-                <img className='heart' alt='heart' src={heart} style={{width: 10 + click*10 + 'px'}}/>
+                {heartImg}
            </div>
            
         </div>
