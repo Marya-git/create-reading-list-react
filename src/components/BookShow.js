@@ -1,23 +1,32 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import BookEdit from "./BookEdit";
+import BooksContext from "../context/books";
 import heart from '../svg/heart.svg';
 import heartWhite from '../svg/heart-white.svg';
 
-function BookShow({book, onDelete, onEdit}){
+
+function BookShow({book}){
     const [showEidt, setShowEdit] =  useState(false);
     // const [click, setClick] = useState(0);
     const [heartColor, setHeartColor] = useState(false);
+    const { deleteBookById, editBookById } = useContext(BooksContext);
+
     const deleteItem = () => {
-        onDelete(book.id);
+        deleteBookById(book.id);
     }
     const eidtItem = () => {
         setShowEdit(!showEidt);
     }
-     const handleEditSubmit = (id, newTitle) => { 
+     const handleEditSubmit = () => { 
         setShowEdit(false);
-        onEdit(id, newTitle);
     }
-    let content = <h3>{book.title}</h3>;
+    let content;
+    if (book.author) {
+        content = <><h3>{book.title}</h3><h2>by <i>{book.author}</i></h2></>;
+    } else {
+        content = <h3>{book.title}</h3>;
+    }
+    
     if (showEidt) {
         content = <BookEdit  book={book} onSubmit={handleEditSubmit}/>;
     }
